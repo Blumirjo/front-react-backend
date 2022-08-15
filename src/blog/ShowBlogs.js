@@ -13,6 +13,7 @@ const CompShowBlogs = () => {
   //procedimiento para mostrar todos lo blogs
   const getBlogs = async () => {
         const res = await axios.get(URI)
+        console.log(res.data)
         setBlog(res.data)
   }
 
