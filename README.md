@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# ToDo-App-React-Express-Bootstrap
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Las tecnologias utilizadas para crear este rpoyecto es casi igual a un stack MERN, la diferencia es que en vez de usar mongodb, utiliza una base de datos MySQL, por lo tanto es un proyecto que utiliza una base de datos relacional.
 
-## Available Scripts
+Esta aplicacion ToDo, es un ejercicio full stack basico, que busca aplicar un CRUD de una manera muy sencilla, el proyecto esta pensado para correrlo de manera local, 
+luego de ser clonado, debera abrirlo en un aditor de codigo, y abrir dos terminales. Una posicionada sobre la carpeta principal y la otra en la posicionada sobre la carpeta 'Node', en mi caso realice las pruebas
 
-In the project directory, you can run:
+## Scripts que debe correr en la consola
+
+Debe hacer correr una serie de scripts para hacer correr el proyecto de manera local.
+
+### `npm i`
+
+Debe correrse este script en ambas carpetas, la principal y la carpeta Node. Para asi al tener todas las dependencias del proyecto, asegurar su correcto funcionamiento.
+
+### `nodemon app`
+
+Con ste script de leventara el servidor express, 'https://localhost:8000', en la ruta 'https://localhost:8000/blogs', se encuentrara la tabla en formato json, sin embargo algunos detalles configurables, yo utilizo Xampp para hacer correr la aplicacion de manera local.
+
+La conexion a la base de datos, es absolutamente configurable, sea el nombre la base de datos, el dialecto, y el puerto:
+
+```javascript
+import {Sequelize } from 'sequelize';
+
+const db = new Sequelize('database_app', 'root', '',{
+      host:'localhost',
+      dialect: 'mysql',
+      port:'3306',
+
+})
+
+export default db;
+```
+
+El modelo de la tabla blogs, es al que vamos  acceder:
+
+```javascript
+import db from '../database/db.js';
+//importamos Sequelize
+import { DataTypes } from 'sequelize';
+
+const BlogModel = db.define('blogs', {
+    title: {type: DataTypes.STRING },
+    content: {type: DataTypes.STRING},
+},{
+    timestamps:false,
+})
+
+export default BlogModel;
+```
+
+
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Este script hara correr la aplicacion react en 'http://localhost:3000', 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Muchas Gracias`
 
-### `npm test`
+puedes visitar mi perfil de **[linkedin](https://facebook.github.io/create-react-app/docs/running-tests)!**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+pero si venis de alli, podes  [mi pagina porfolio](https://facebook.github.io/create-react-app/docs/getting-started)  para ver otros proyectos.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

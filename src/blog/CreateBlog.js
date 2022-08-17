@@ -19,10 +19,10 @@ const store = async (e) => {
 
     return(
         <div>
-           <h3>Create POST</h3>
+           <h3>Crear Tarea</h3>
            <form onSubmit={store}>
                <div className='mb-3'>
-               <label className='form-label'>Title</label>
+               <label className='form-label mt-4'>Mi deber</label>
                    <input
                       value={title}
                       onChange={(e)=> setTitle(e.target.value)}
@@ -31,7 +31,7 @@ const store = async (e) => {
                    />
                    </div>
                    <div className='mb-3'>
-                     <label className='form-label'>Content</label>
+                     <label className='form-label mt-4'>Descripcion</label>
                      <textarea
                       value={content}
                       onChange={(e)=> setContent(e.target.value)}
@@ -39,7 +39,7 @@ const store = async (e) => {
                       className='form-control' 
                    />
                     </div>
-                <button type='submit'  className='btn btn-primary'>Store</button>
+                <button type='submit'  className='btn btn-primary mt-4 mb-5'>¡Agregar a la lista!</button>
            </form>
         </div>
     )

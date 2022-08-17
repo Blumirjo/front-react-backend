@@ -31,9 +31,41 @@
 }
 
 
+
+
+
+
+/* NAVBAR */
+
+.nav-config{
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  padding: 0.2rem;
+}
+
+#s-style{
+  width:9rem;
+  height: 9rem;
+}
+
+#dev{
+  color: #fff;
+  font-size: 3rem;
+  margin-top: 3rem;
+  position: relative;
+  right: 1.8rem;
+}
+
+
+
+
+
+
 /* FOOTER */
 
 .style-footer{
+  margin-top: 15rem;
     height: 5rem;
     margin: 1rem 1rem 1rem 1rem;
 }

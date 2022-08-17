@@ -27,13 +27,13 @@ const CompShowBlogs = () => {
   return(
       <div className='container'>
         <div className='row'>
-          <div className='col'> 
-            <Link to="/create" className="btn btn-primary mt-2 mb-2">Crear</Link>
+          <div className='col-12'> 
+            <Link to="/create" className="btn btn-primary mt-2 mb-4"><h4>Crear tarea</h4></Link>
              <table className='table'>
                <thead className='table-primary'>
                    <tr>
-                      <th>Title</th>
-                      <th>Content</th>
+                      <th>Tarea</th>
+                      <th>Descripcion</th>
                       <th>Actions</th>
                     </tr>
                </thead>

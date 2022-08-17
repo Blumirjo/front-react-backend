@@ -1,5 +1,6 @@
 import imgGithub from './images/github-logo-1.svg'
 import imgLinkedin from './images/linkedin-3.svg'
+import imgSG from './images/sg.svg'
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,7 +18,31 @@ function App() {
 
       <div className='row'>
 
-                  <div className='col-12 mt-4 mb-4'>
+
+      <div className="col-12">
+
+            <div className="row ">
+
+               <div className='col-12 nav-config'>
+               <a  id="title-myname" className="navbar-brand font-s-title" href="https://github.com/Sebas-gatica-dev" target="_blank" rel="noreferrer">
+                                    <img id="s-style" className="letter-title" src={imgSG}  alt="sg" />
+                     </a>
+      
+                     <p id="dev" >.developer</p>                                
+            
+
+                
+               </div>
+                
+             </div>
+                          
+            
+     </div>
+
+  
+
+              {/* ends nav */}
+                  <div className='col-12 mt-4 mb-5'>
                 
                 
                 <header className="App-header row">
@@ -28,30 +53,28 @@ function App() {
                       <img src={logo} className="App-logo" alt="logo" />   
                   </div>
                   <div className='col-12 mt-3 mb-3 '>
-                      <p className='row ms-5 me-5 rounded-4 bg-info p-3'>
+                      <p className='row ms-5 me-5 rounded-4 bg-info p-3 text-white'>
                           <p className='col-12'>
                           Esta aplicacion ToDO, no es mas que una interfaz de anotacion de tareas, en cuyo diseño encierra los estilos de bootstrap,
                           creada utilizando react, a traves de axios, puedo acceder a la tabla en forma de json, alojada en "http://localhost:8000/blogs", y luego la informacion es mapeada dentro de un componente de tabla de bootstrap.
                           </p>
                           <p className='col-12'>
                           El backend esta trabajado, con express y sequelize junto con el middleware "cors", instalando el paquete "mysql2", ya que este paquete de mysql es el compatible con sequelize. 
-                        Utilizo Xampp como sistema de gestion de base de datos.
+                        Utilizo Xampp como sistema de gestion de base de datos, para correrlo de manera local.
                           </p>
                   
-                      
-                 
               
                       </p>
                   </div>
                   <div className='col-12'>
-                         
+                         <a href='https://github.com/Sebas-gatica-dev/front-react-backend' target="_blank" rel="noreferrer" type="button" class="btn btn-primary p-3 mb-4"><h3>¡Visita el repositorio!</h3></a>
                   </div>
                 
                 </header>
                     
                 </div>
 
-                <div className='col-12'>
+                <div className='col-12 mt-5'>
                       
                       <BrowserRouter>
                         <Routes>
@@ -63,7 +86,7 @@ function App() {
 
                 </div>
                   
-                <div className="col-12">
+                <div className="col-12 mt-5">
              
     
                         <div className="row style-row-footer mt-5  p-3">
